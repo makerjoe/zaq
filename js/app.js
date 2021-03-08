@@ -16,7 +16,7 @@ var app = new Framework7({
   },
 });
 // redirect directly to home page
-app.views.main.router.navigate('/homex/')
+app.views.main.router.navigate('/home/')
 debugger
 // Login Screen Demo
 $('#my-login-screen .login-button').on('click', function () {
