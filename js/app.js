@@ -13,7 +13,7 @@ var app = new Framework7({
   routes: routes,
   // Register service worker
   serviceWorker: {
-    path: '/fw603/service-worker.js',
+    path: 'service-worker.js',
   },
 });
 // redirect directly to home page

@@ -1,9 +1,9 @@
 {
-  "name": "fw603",
-  "short_name": "fw603",
-  "description": "fw603",
+  "name": "zaq",
+  "short_name": "zaq",
+  "description": "zaq",
   "lang": "en-US",
-  "start_url": "/fw603/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#EE350F",
   "theme_color": "#EE350F",
