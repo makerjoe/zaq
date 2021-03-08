@@ -15,6 +15,9 @@ var app = new Framework7({
     path: 'service-worker.js',
   },
 });
+
+var mainView = app.views.create('.view-main');
+
 // redirect directly to home page
 app.views.main.router.navigate('/home/')
 // debugger
