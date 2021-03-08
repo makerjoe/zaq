@@ -1,0 +1,419 @@
+const axios = require('axios');
+
+function slowQuery(url) {        
+    axios.get(url)
+    .then(function (response) {
+            it.next(1);
+    })
+    .catch(function (error) {
+            it.next(0);
+    })
+}
+
+function* myGen(i=0) {
+    let queryResult = 0;
+
+    console.log("query1", queryResult);
+    queryResult = yield slowQuery('https://google.com');
+
+
+    if(queryResult == 1) {
+        console.log("query2", queryResult);
+        //change it to the correct url and run again.
+        queryResult = yield slowQuery('https://1111111111google.com');
+    }
+
+    if(queryResult == 1) {
+        console.log("query3", queryResult);
+        queryResult =  yield slowQuery('https://google.com');
+    } else {
+        console.log("query4", queryResult);
+        queryResult = yield slowQuery('https://google.com');
+    }
+}
+
+console.log("+++++++++++start+++++++++++");
+let it = myGen();
+let result = it.next();
+console.log("+++++++++++end+++++++++++");
+
+const fs = require('fs');
+const testFolder = './';
+
+fs.readdir(testFolder, (err, files) => {
+    if (err) throw err;
+    if (files){
+        files.forEach(file => {
+            console.log(file);
+        });
+    } else {
+        console.log('no files found')
+    }
+});
+
+
+const data1 = '        <!DOCTYPE html>
+<title>Title</title>
+
+<style>body {width: 500px;}</style>
+
+<script type="application/javascript">
+function $init() {return true;}
+</script>
+
+<body>
+<p checked class="title" id='title'>Title</p>
+<!-- here goes the rest of the page -->
+</body>
+"`;
+console.log(data1);  
+
+// data1 = RemoveGLthanChar(data1);
+               
+data1 = data1.replace(/\</g,"&lt;")   //for <
+data1 = data1.replace(/\>/g,"&gt;")   //for >
+console.log(data1)';
+
+
+
+      /** Used to map characters to HTML entities. */
+      // const htmlEscapes = {
+      //   '&': '&amp',
+      //   '<': '&lt',
+      //   '>': '&gt',
+      //   '"': '&quot',
+      //   "'": '&#39'
+      // }
+
+      /** Used to match HTML entities and HTML characters. */
+      // const reUnescapedHtml = /[&<>"']/g
+      // const reHasUnescapedHtml = RegExp(reUnescapedHtml.source)
+
+      /**
+       * Converts the characters "&", "<", ">", '"', and "'" in `string` to their
+       * corresponding HTML entities.
+       *
+       * **Note:** No other characters are escaped. To escape additional
+       * characters use a third-party library like [_he_](https://mths.be/he).
+       *
+       * Though the ">" character is escaped for symmetry, characters like
+       * ">" and "/" don't need escaping in HTML and have no special meaning
+       * unless they're part of a tag or unquoted attribute value. See
+       * [Mathias Bynens's article](https://mathiasbynens.be/notes/ambiguous-ampersands)
+       * (under "semi-related fun fact") for more details.
+       *
+       * When working with HTML you should always
+       * [quote attribute values](http://wonko.com/post/html-escaping) to reduce
+       * XSS vectors.
+       *
+       * @since 0.1.0
+       * @category String
+       * @param {string} [string=''] The string to escape.
+       * @returns {string} Returns the escaped string.
+       * @see escapeRegExp, unescape
+       * @example
+       *
+       * escape('fred, barney, & pebbles')
+       * // => 'fred, barney, &amp pebbles'
+       */
+      // function escape(string) {
+      //   return (string && reHasUnescapedHtml.test(string))
+      //     ? string.replace(reUnescapedHtml, (chr) => htmlEscapes[chr])
+      //     : string
+      // }
+
+      // const data1 = escape(`
+      //     <!DOCTYPE html>
+      //     <style>body {width: 500px;}
+      //     </style>
+      //     <script type='application/javascript'>
+      //     function $init() {return true;}
+      //     </script>`
+      //   );
+		
+      //console.log( escape(`<!DOCTYPE html><style>body {width: 500px;}</style>`));
+      //escape('<!DOCTYPE html>')
+
+      //   function OuterHTML(element) {
+      //   var container = document.createElement("div");
+      //   container.appendChild(element.cloneNode(true));
+      //   return container.innerHTML;
+      // }
+
+      // function encodeMyHtml(html) {
+      //  encodedHtml = escape(html);
+      //  encodedHtml = encodedHtml.replace(/\//g,"%2F");
+      //  encodedHtml = encodedHtml.replace(/\?/g,"%3F");
+      //  encodedHtml = encodedHtml.replace(/=/g,"%3D");
+      //  encodedHtml = encodedHtml.replace(/&/g,"%26");
+      //  encodedHtml = encodedHtml.replace(/@/g,"%40");
+      //  return encodedHtml;
+      // } 
+
+      // div = document.getElementById('jwplayer');
+      //data1 = encodeMyHtml(data1);
+
+      // document.body.innerHTML += encoded;
+      // alert(unescape(encoded));
+      // `;
+
+      // function RemoveGLthanChar(notes) {
+      //   var regex = /<[^>](.*?)>/g;
+      //   var strBlocks = notes.match(regex);
+
+      //   strBlocks.forEach(function (dirtyBlock) {
+      //     let cleanBlock = dirtyBlock.replace("<", "[").replace(">", "]");
+      //     notes = notes.replace(dirtyBlock, cleanBlock);
+      //   });
+
+      //   return notes
+      // }
+
+
+      data1 = `
+      <!DOCTYPE html>
+      <title>Title</title>
+
+      <style>body {width: 500px;}</style>
+
+      <script type="application/javascript">
+      function $init() {return true;}
+      </script>
+
+      <body>
+      <p checked class='title' id='title'>Title</p>
+      <!-- here goes the rest of the page -->
+      </body>     
+      `;
+          
+
+      <form class="list" id="my-form">
+      <ul>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">ID</div>
+              <div class="item-input-wrap">
+                <input type="text" name="_id" placeholder="ID" readonly>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">rev</div>
+              <div class="item-input-wrap">
+                <input type="text" name="_rev" placeholder="REV" readonly>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Montos</div>
+              <div class="item-input-wrap">
+                <input type="text" name="montosx" placeholder="Montos">
+              </div>
+            </div>
+          </div>
+        </li>
+        <!--                     
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">FechaINI</div>
+              <div class="item-input-wrap">
+                <input type="text" name="fechaini" placeholder="Montos">
+              </div>
+            </div>
+          </div>
+        </li>
+        -->
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">FirstName</div>
+              <div class="item-input-wrap">
+                <input type="text" name="first_name" placeholder="Your name">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">LastName</div>
+              <div class="item-input-wrap">
+                <input type="text" name="last_name" placeholder="Your name">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">E-mail</div>
+              <div class="item-input-wrap">
+                <input type="email" name="email" placeholder="E-mail">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">FiniAno</div>
+              <div class="item-input-wrap">
+                <input type="email" name="finiano" placeholder="E-mail">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">FiniMes</div>
+              <div class="item-input-wrap">
+                <input type="email" name="finimes" placeholder="E-mail">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">FiniDia</div>
+              <div class="item-input-wrap">
+                <input type="email" name="finidia" placeholder="E-mail">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Gender</div>
+              <div class="item-input-wrap">
+                <select name="gender">
+                  <option value="male" selected>Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Gender</div>
+              <div class="item-input-wrap">
+                <select name="gender">
+                  <option value="male" selected>Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Toggle</div>
+              <div class="item-after">
+                <label class="toggle toggle-init">
+                  <input type="checkbox" name="toggle" value="yes"><i class="toggle-icon"></i>
+                </label>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div id="formarr"></div>
+
+    </form>
+
+    <div class="data-table data-table-collapsible ">
+                      <div class="card-header">
+                        <div class="data-table-title">Nutrition</div>
+                        <div class="data-table-actions">
+                          <a class="link icon-only">
+                            <i class="icon f7-icons ios-only">sort</i>
+                            <i class="icon material-icons md-only">sort</i>
+                          </a>
+                          <a class="link icon-only">
+                            <i class="icon f7-icons ios-only">more_vertical_round</i>
+                            <i class="icon material-icons md-only">more_vert</i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="card-content">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th class="label-cell">Year</th>
+                              <th class="numeric-cell">Month</th>
+                              <th class="numeric-cell">ALQS</th>
+                              <th class="numeric-cell">AYSS</th>
+                              <th class="numeric-cell">ABLS</th>
+                              <th class="numeric-cell">HONS</th>
+                              <th class="numeric-cell">IMBS</th>
+                              <th class="numeric-cell">FIXS</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <span id="formarr"></span>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+  {
+    path: '/blog/',
+    component: MyComponent
+  },
+
+<script>
+  const MyComponent = (props, { $h, $f7, $on }) => {
+
+    const title = 'Component Page';
+    const names = ['John', 'Vladimir', 'Timo'];
+
+    const openAlert = () => {
+      $f7.dialog.alert('Hello world!');
+    }
+
+    $on('pageInit', (e, page) => {
+      // do something on page init
+    });
+    $on('pageAfterOut', (e, page) => {
+      // page has left the view
+    });
+
+    return () => $h`
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner">
+        <div class="title">${title}</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <a @click=${openAlert} class="red-link">Open Alert</a>
+      <div class="list simple-list">
+        <ul>
+          ${names.map((name) => $h`
+            <li>${name}</li>
+          `)}
+        </ul>
+      </div>
+    </div>
+  </div>
+`;
+  }
+</script>
+      <div class="page">
+      </div>

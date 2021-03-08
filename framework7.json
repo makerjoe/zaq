@@ -1,0 +1,19 @@
+{
+  "cwd": "C:\\FW60",
+  "type": [
+    "web",
+    "pwa"
+  ],
+  "name": "My App",
+  "framework": "core",
+  "template": "single-view",
+  "bundler": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}

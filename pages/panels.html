@@ -1,0 +1,112 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+
+        <div class="left">
+          <a href="#" class="link icon-only panel-open" data-panel="#panel-left-inst">
+            <i class=" icon f7-icons ios-only">menu</i>
+            <i class="icon material-icons md-only">menu</i>
+          </a>
+        </div>
+
+        <div class="title sliding">Panels</div>
+
+        <div class="right">
+          <a href="#" class="link icon-only panel-open" data-panel="#panel-right-inst">
+            <i class="icon f7-icons ios-only">menu</i>
+            <i class="icon material-icons md-only">menu</i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="page-content">
+      <div class="block">
+        <p><a href="/panelscomp/" >Open Left Routable Panel</a></p>
+        <p><a href="#" data-panel="#panel-right-main" class="panel-open">Open Right MAIN Panel</a></p>
+
+        <p><a href="#" data-panel="#panel-left-inst" class="panel-open">Open Left INST Panel</a></p>
+        <p><a href="#" data-panel="#panel-right-inst" class="panel-open">Open Right INST Panel</a></p>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default (props, { $, $on, $f7 }) => {
+
+    var panelLeftinst = app.panel.create({
+      el: '#panel-left-inst',
+      resizable: true,
+    })
+
+    var panelRightinst = app.panel.create({
+      el: '#panel-right-inst',
+      resizable: true,
+    })
+
+    // DOM Events
+    $('#panel-left-main').on('panel:open', function () {
+      console.log('Panel dom left: open');
+    });
+
+    $('#panel-left-main').on('panel:opened', function () {
+      console.log('Panel dom left: opened');
+    });
+
+    $('#panel-right-inst').on('panel:open', function () {
+      console.log('Panel dom left: open');
+    });
+
+    $('#panel-right-inst').on('panel:opened', function () {
+      console.log('Panel dom left: opened');
+    });
+
+    // app Events
+
+    app.on('panelOpen', function (panelLeftinst) {
+      console.log('Panel app ' + panelLeftinst.side + ' open');
+    });
+    app.on('panelOpen', function (panelRightinst) {
+      console.log('Panel app ' + panelRightinst.side + ' open');
+    });
+
+    app.on('panelOpen', function (panelLeftinst) {
+      console.log('Panel app ' + panelLeftinst.side + ' opened');
+    });
+    app.on('panelOpen', function (panelRightinst) {
+      console.log('Panel app ' + panelRightinst.side + ' opened');
+    });
+
+    // Instance Events
+
+    var panelLeftinstx = $f7.panel.get('#panel-left-inst');
+    var panelRightinstx = $f7.panel.get('#panel-right-inst');
+    //debugger
+    panelLeftinstx.on('open', function () {
+      console.log('Panel Left INSTANCE: open');
+    });
+
+    panelLeftinstx.on('opened', function () {
+      console.log('Panel Left INSTANCE: opened');
+    });
+
+    panelRightinstx.on('open', function () {
+      console.log('Panel Right INSTANCE: open');
+    });
+
+    panelRightinstx.on('opened', function () {
+      console.log('Panel Right INSTANCE: opened');
+    });
+
+    return $render;
+  }
+</script>

@@ -1,0 +1,111 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <div class="title">Component2 Page</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title block-title-medium">Welcome to Framework7</div>
+      <div class="block block-strong">
+        Framework7
+        <div class="list">
+          <ul>
+            <my-list-item id="item-1">xxxx</my-list-item>
+          </ul>
+        </div>
+        <br />
+
+        <p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web apps with
+          iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps tool to show
+          working app prototype as soon as possible in case you need to. Framework7 is created by Vladimir Kharlampidi.
+        </p>
+        <p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android (Material) apps
+          with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It doesn't limit your
+          imagination or offer ways of any solutions somehow. Framework7 gives you freedom!</p>
+        <p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to bring
+          the best experience and simplicity.</p>
+        <p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or PhoneGap) or
+          web app that looks like and feels as great native iOS or Android (Material) apps.</p>
+
+        <p>Value is: ${foo} ${console.log(users.value)} ${$store.getters.name.value} </p>
+        <p>
+          <a href="#" @click=${changeValue}>Change value</a>
+        </p>
+        <ul>
+          ${items.map((item,index) => $h`
+          <li>${index} ${item.title}</li>
+          `)}
+        </ul>
+        ${ $h`
+        <!-- <p>Text will be visible when "someVar" is truthy</p> -->
+        `}
+
+        ${ $h`
+        <p>Text will be visible when "someVar" equals to 1</p>
+        `}
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+
+  export default (props, { $f7, $on, $update, $store }) => {
+
+console.log(view);
+
+    let foo = 'bar';
+    const users = $store.getters.users;
+    const someVar = 1;
+    const items = [
+      {
+        title: 'Item 1'
+      },
+      {
+        title: 'Item 2'
+      },
+    ];
+
+
+    const changeValue = () => {
+      foo = 'bar 2';
+
+      items[0].title = 'AAAAAAAA'
+      items[1].title = 'BBBBBBBB'
+      $f7.dialog.alert('page init')
+      $update();
+    }
+
+    $on('pageInit', () => {
+      //debugger
+      Framework7.registerComponent(
+        // component name
+        'my-list-item',
+
+        // component function
+        (props, { $h }) => {
+          let foo = 'bar';
+
+          return () =>
+            $h`
+    ${items.map((item, index) => $h`
+    <li>${index} ${item.title}</li>
+    `)}
+  `
+        }
+      )
+
+      //$store.dispatch('openAlert');
+
+    })
+
+    return $render;
+  }
+</script>
