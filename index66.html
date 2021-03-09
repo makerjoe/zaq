@@ -38,181 +38,190 @@
 
 <body>
   <div id="app">
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar"></div>
+
     <!-- Left panel with cover effect-->
-
-    <div class="panel panel-left panel-cover theme-dark">
-      <div class="page">
-        <div class="page-content">
-          <div class="block-title">Left Panel</div>
-          <div class="block">
-            <p>This is a left side panel. You can close it by clicking outsite or on this link: <a href="#"
-                class="panel-close">close me</a>. You can put here anything, even another isolated view like in <a
-                href="#" data-panel="right" class="panel-open">Right Panel</a></p>
-          </div>
-
-          <div class="w3-tag w3-round w3-green" style="padding:3px">
-            <div class="w3-tag w3-round w3-green w3-border w3-border-white">
-              Falcon Ridge Parkway
+    <div id="panel-left-inst" class="panel panel-left panel-cover theme-dark ">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Left INST Panel</div>
             </div>
           </div>
+          <div class="page-content">
+            <div class="block">
+              Left INST panel content goes here
+              <!-- Click on link with "panel-close" class will close panel -->
+              <p><a href="#" class="panel-close">Close me</a></p>
 
-          <div class="block-title">Main View Navigation</div>
-          <div class="list links-list">
-            <ul>
-
-              <li>
-                <a href="#" data-login-screen=".login-screen"
-                  class="button button-fill color-green login-screen-open">Open Login Screen</a>
-              </li>
-              <li>
-                <a class="link login-screen-close">Logout</a>
-              </li>
-              <li>
-                <a href="/formhelpers/" class="button button-fill color-green panel-close">FormHelper</a>
-              </li>
-              <li>
-                <a href="/menu/" class="chip color-pink panel-close">Menu
-                  << /a>
-              </li>
-              <li>
-                <a href="/photobrowser/" class="button button-fill color-blue panel-close">PhotoBrowser</a>
-              </li>
-              <li>
-                <a href="/formdata/" class="button button-fill color-grey panel-close">FormData</a>
-              </li>
-              <li>
-                <a href="/cardsexpandable/" class="button button-fill color-yellow panel-close">Cards</a>
-              </li>
-              <div class="block" id="mySelector">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum
-                  neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus,
-                  viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim. Suspendisse non nisl semper
-                  tellus malesuada suscipit eu et eros. Nulla eu enim quis quam elementum vulputate. Mauris ornare
-                  consequat nunc viverra pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed
-                  libero mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor. Suspendisse a
-                  faucibus lectus.</p>
-                <p>Duis ut mauris sollicitudin, venenatis nisi sed, luctus ligula. Phasellus blandit nisl ut lorem
-                  semper pharetra. Nullam tortor nibh, suscipit in consequat vel, feugiat sed quam. Nam risus libero,
-                  auctor vel tristique ac, malesuada ut ante. Sed molestie, est in eleifend sagittis, leo tortor
-                  ullamcorper erat, at vulputate eros sapien nec libero. Mauris dapibus laoreet nibh quis bibendum.
-                  Fusce dolor sem, suscipit in iaculis id, pharetra at urna. Pellentesque tempor congue massa quis
-                  faucibus. Vestibulum nunc eros, convallis blandit dui sit amet, gravida adipiscing libero.</p>
-              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Right panel with reveal effect-->
-    <div class="panel panel-right panel-reveal theme-dark">
+    <div id="panel-right-inst" class="panel panel-right panel-reveal theme-dark">
       <div class="view">
         <div class="page">
           <div class="navbar">
+            <div class="navbar-bg"></div>
             <div class="navbar-inner">
-              <div class="title">
-                <h1>Right Panel
-              </div>
+              <div class="title">Right INST Panel</div>
             </div>
           </div>
           <div class="page-content">
-            <div class="block">Right panel content goes here</div>
-            <ul>
-              <a href="/formhelpers/" class="item-content item-link button button-fill color-pink">
-                linkaaa
+            <div class="block">
+              Right INST panel content goes here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-              </a>
-            </ul>
-            <ul>
-              <a href="/formhelpers/" class="list item-content item-link">
-                <p class="button button-fill color-pink">linkqqq
-                </p>
-              </a>
-            </ul>
-            <ul>
-              <a href="/formhelpers/" class="list item-content item-link">
-                <p class="button button-fill color-pink">linkqqq
-                </p>
-              </a>
-            </ul>
 
+    <!-- Left panel with cover effect-->
+    <div id="panel-left-main" class="panel panel-left panel-cover theme-dark ">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Left MAIN Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              Left MAIN panel content goes here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel with reveal effect-->
+    <div id="panel-right-main" class="panel panel-right panel-reveal theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Right MAIN Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              Right MAIN panel content goes here
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Your main view, should have "view-main" class -->
-    <div class="view view-main">    </div>
-
-
-      <div class="popup" id="my-popup">
-        <div class="view">
-          <div class="page">
-            <div class="navbar">
-              <div class="navbar-inner">
-                <div class="title">Popup</div>
-                <div class="right">
-                  <a href="#" class="link popup-close">Close</a>
+    <div class="view view-main view-init safe-areas">
+      <div class="page">
+                <!-- Top Navbar -->
+                <div class="navbar">
+                  <div class="navbar-bg"></div>
+                  <div class="navbar-inner">
+                    <div class="left">
+                      <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Back</span>
+                      </a>
+        
+                      <a href="#" class="link icon-only panel-open" data-panel="#panel-left-main">
+                        <i class="icon f7-icons ios-only">menu</i>
+                        <i class="icon material-icons md-only">menu</i>
+                      </a>
+                    </div>
+                    <div class="title sliding">R&D2 App</div>
+                    <div class="right">
+                      <a href="#" class="link icon-only panel-open" data-panel="#panel-right-main">
+                        <i class="icon f7-icons ios-only">menu</i>
+                        <i class="icon material-icons md-only">menu</i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
+                <!-- Toolbar-->
+        
+        <h1>
+          main page
+        </h1>
+      </div>
+    </div>
+
+
+    <div class="popup" id="my-popup">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="title">Popup</div>
+              <div class="right">
+                <a href="#" class="link popup-close">Close</a>
               </div>
             </div>
-            <div class="page-content">
+          </div>
+          <div class="page-content">
 
-              <div class="block">
-                <p>Popup content goes here.</p>
-              </div>
+            <div class="block">
+              <p>Popup content goes here.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Login Screen -->
-      <div class="login-screen">
-        <!-- Default view-page layout -->
-        <div class="view">
-          <div class="page">
-            <!-- page-content has additional login-screen content -->
-            <div class="page-content login-screen-content">
-              <div class="login-screen-title">Makerjoe Login</div>
-              <!-- Login form -->
+    <!-- Login Screen -->
+    <div class="login-screen">
+      <!-- Default view-page layout -->
+      <div class="view">
+        <div class="page">
+          <!-- page-content has additional login-screen content -->
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Makerjoe Login</div>
+            <!-- Login form -->
 
-              <form>
-                <div class="list">
-                  <ul>
-                    <li class="item-content item-input">
-                      <div class="item-inner">
-                        <div class="item-title item-label">Username</div>
-                        <div class="item-input-wrap">
-                          <input type="text" name="username" placeholder="Username">
-                          <span class="input-clear-button"></span>
-                        </div>
+            <form>
+              <div class="list">
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Username</div>
+                      <div class="item-input-wrap">
+                        <input type="text" name="username" placeholder="Username">
+                        <span class="input-clear-button"></span>
                       </div>
-                    </li>
-                    <li class="item-content item-input">
-                      <div class="item-inner">
-                        <div class="item-title item-label">Password</div>
-                        <div class="item-input-wrap">
-                          <input type="password" name="password" placeholder="Password">
-                          <span class="input-clear-button"></span>
-                        </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Password</div>
+                      <div class="item-input-wrap">
+                        <input type="password" name="password" placeholder="Password">
+                        <span class="input-clear-button"></span>
                       </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="list">
-                  <ul>
-                    <li>
-                      <a href="#" class="item-link list-button button">Sign In</a>
-                    </li>
-                  </ul>
-                  <div class="block-footer">Some text with login information.</div>
-                </div>
-              </form>
-            </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href="#" class="item-link list-button button">Sign In</a>
+                  </li>
+                </ul>
+                <div class="block-footer">Some text with login information.</div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
 
   </div>
 

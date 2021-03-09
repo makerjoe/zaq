@@ -2,7 +2,7 @@
 var routes = [
   {
     path: '/',
-    url: './pages/home.html',
+    url: './index.html',
   },  
   {
     path: '/home/',
