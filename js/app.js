@@ -48,7 +48,7 @@ var app = new Framework7({
   routes: routes,
   // Register service worker
   serviceWorker: {
-    path: '/FW60/service-worker.js',
+    path: 'service-worker.js',
   },  
   view: { stackPages:true}, // use for multiple stacked inside inline pages
 });

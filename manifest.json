@@ -1,9 +1,9 @@
 {
-  "name": "FW60",
-  "short_name": "FW60",
-  "description": "FW60",
+  "name": "zaq",
+  "short_name": "zaq",
+  "description": "zaq",
   "lang": "en-US",
-  "start_url": "/FW60/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#EE350F",
   "theme_color": "#EE350F",
