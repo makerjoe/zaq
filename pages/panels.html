@@ -41,7 +41,14 @@
   </div>
 </template>
 <script>
-  export default (props, { $, $on, $f7 }) => {
+  export default (props, { $, $on, $f7 , $store }) => {
+
+    app.request.json('https://randomuser.me/api/').then((res) => {
+      //console.log('json',res.data);
+      $store.state.users = res.data;
+    });
+    console.log('response:' , $store.state.users);
+    debugger
 
     var panelLeftinst = app.panel.create({
       el: '#panel-left-inst',
@@ -106,6 +113,18 @@
     panelRightinstx.on('opened', function () {
       console.log('Panel Right INSTANCE: opened');
     });
+
+    // app.request.json('https://randomuser.me/api/').then((res) => {
+    //   console.log(res.data);
+    // });
+
+//     $.ajax({
+//   url: 'https://randomuser.me/api/',
+//   dataType: 'json',
+//   success: function(data) {
+//     console.log(data);
+//   }
+// });
 
     return $render;
   }

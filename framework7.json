@@ -1,8 +1,7 @@
 {
-  "cwd": "C:\\FW60",
+  "cwd": "C:\\FW603",
   "type": [
-    "web",
-    "pwa"
+    "web"
   ],
   "name": "My App",
   "framework": "core",
