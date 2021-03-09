@@ -1,0 +1,101 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <div class="title">Component1 Page</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title block-title-medium">Welcome to Framework7</div>
+      <div class="block-title block-title-small">
+        ${name.value} ${users.value} Store ${console.log(users.value)}
+      </div>
+      ${users.value.length > 0 ? $h`
+        <div class="list">
+          <ul>
+            ${users.value.map((user) => $h`
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">${user}</div>
+              </div>
+            </li>
+
+            `)}
+          </ul>
+          <a
+          href="#"
+          class="button button-fill button-preloader ${loading.value ? 'button-loading' : ''}"
+          @click=${chgUsers}
+          >
+          <span class="preloader"></span>
+          <span>CHANGE Users</span>
+          </a>
+          <a
+          href="#"
+          class="button button-fill button-preloader ${loading.value ? 'button-loading' : ''}"
+          @click=${chgState}
+          >
+          <span class="preloader"></span>
+          <span>CHANGE State</span>
+          </a>
+          <a
+          href="#"
+          class="button button-fill button-preloader ${loading.value ? 'button-loading' : ''}"
+          @click=${chgStateFunc}
+          >
+          <span class="preloader"></span>
+          <span>CHANGE StateFunc</span>
+          </a>
+
+        </div>
+      ` : $h`
+        <div class="block block-strong">
+          <a
+            href="#"
+            class="button button-fill button-preloader ${loading.value ? 'button-loading' : ''}"
+            @click=${()=>$store.dispatch('getUsers', 'popo')}
+          >
+            <span class="preloader"></span>
+            <span>Load Users</span>
+          </a>
+        </div>
+      `}
+    </div>
+  </div>
+</template>
+<script>
+  //debugger;
+  export default (props, { $store }) => {
+    const loading = $store.getters.loading;
+    const name = $store.getters.name;
+    const users = $store.getters.users;
+    
+    console.log(name.value);
+    console.log(users.value);
+
+    const loadUsers = (x) => { 
+      $store.dispatch('getUsers', x);
+    };
+
+    const chgUsers = () => {
+      $store.dispatch('changeUsers');
+    };
+    const chgState = () => {
+      $store.state.name = "BENNY";
+    };
+    const chgStateFunc = () => {
+      $store.state.pomo($store.state.name);
+      $store.state.users = 0;
+      console.log('getfunc',$store.getters.getfunc.value);
+      
+    };
+    return $render;
+  };
+</script>

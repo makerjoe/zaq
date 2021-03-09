@@ -1,0 +1,254 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <div class="title">Component Page</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <a @click=${openAlert}>Open Alert</a>
+      <p>${app.name}</p>
+      <p>${name}</p>
+
+      <div class="list simple-list">
+        <ul>
+          ${vitems.map((item) => $h`
+          <li>-- ${item.last_name}-- ${item.first_name}</li>
+          `)}
+        </ul>
+      </div>
+      <div class="block">
+        <div class="row">
+          <button @click=${newrec} class="col button button-fill">Add New</button>
+          <button @click=${findrecs} class="col button button-fill">Search</button>
+          <button @click=${createidx} class="col button button-fill">IDX</button>
+          <button @click=${bulkrecs} class="col button button-fill button-round">Bulk</button>
+          <button @click=${loadrecs} class="col button button-fill button-round">Load</button>
+          <button @click=${deletedb} class="col button button-fill button-round">DeleteDB</button>
+          <button @click=${createdb} class="col button button-fill button-round">CreateDB</button>
+          <button @click=${sync} class="col button button-fill button-round">SYNC</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+  pre {
+    background: yellow;
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+  }
+</style>
+
+<script>
+  // script must return/export component function
+  export default (props, { $f7, $on, $update }) => {
+    const title = 'Component Page';
+    const names = ['John', 'Vladimir', 'Timo'];
+    const name = 'John';
+    let vitems = [];
+
+    const openAlert = () => {
+      $f7.dialog.alert('Hello world!');
+    };
+
+    const createdb = () => {
+      db = new PouchDB('alqs', {
+        auto_compaction: true
+      });
+      console.log('database created');
+    };
+
+    const newrec = () => {
+      document.getElementById("my-form").reset();
+      var formData = {
+        _id: new Date().toISOString(),
+      }
+      app.form.fillFromData('#my-form', formData);
+      document.getElementById('id01').style.display = 'block'
+    };
+
+    const findrecs = () => {
+      // pagevar self = this;
+      console.log('founded recs');
+      searchkey = ""
+      showTodos()
+    };
+
+    const bulkrecs = () => {
+      db.bulkDocs(alqsdata).then(function (result) {
+        // handle result
+      }).catch(function (err) {
+        console.log(err);
+      });
+
+    };
+
+    const loadrecs = () => {
+      var db = new PouchDB('alqs');
+      db.load('/dump.txt').then(function () {
+        // done loading!
+        console.log('done loading!')
+      }).catch(function (err) {
+        // HTTP error or something like that
+      });
+    };
+
+    const deletedb = () => {
+      db.destroy().then(function () {
+        console.log('database destroyed')
+      }).catch(function (err) {
+        console.log('database ERROR Sdestroyed')
+      })
+    };
+
+    const createidx = () => {
+      db.createIndex({
+        index: {
+          fields: ['last_name']
+        }
+      }).then(function (result) {
+        console.log(result);
+      }).catch(function (err) {
+        console.log(err);
+      });
+    };
+
+    const sync = () => {
+      var opts = {
+        live: true,
+        retry: true
+      };
+      db.replicate.to(remoteCouch, opts, syncError);
+      db.replicate.from(remoteCouch, opts, syncError);
+    };
+
+    // There was some form or error syncing
+    const syncError = () => {
+      //console.log('error')
+      syncDom.setAttribute('data-sync-state', 'error');
+    };
+
+    if (remoteCouch) {
+      // debugger;
+      // start pouchdb local server
+      // pouchdb-server --sqlite
+      sync();
+    };
+
+    const changeValue = (doc) => {
+      vitems = doc.docs
+      $update();
+    }
+
+    const showTodos = () => {
+      console.log('OUT showtodos')
+      var self = this;
+
+      db.find({
+        selector: {
+          $and: [{
+            last_name: {
+              '$gt': null
+            }
+          }, // tip for sorting fiels
+          {
+            last_name: {
+              $regex: "^" + searchkey
+            }
+          } // tip for match PI* like
+          ]
+        },
+        //fields: ['_id', 'first_name', 'last_name','email'],
+        sort: ['last_name']
+      })
+        .then(function (doc) {
+          //debugger
+          vitems = doc.docs
+          var arrx = doc.docs
+          mesx = "11"
+          for (var i = 0; i < arrx.length; i++) {
+            console.log("array index: " + i);
+            var obj = arrx[i];
+            for (var key in obj) {
+              var value = obj[key];
+
+              console.log(key + ": " + value);
+
+              if (key == "alq" + mesx) {
+                //console.log(key + ": " + value);
+              }
+              if (key == "abl" + mesx) {
+                //console.log(key + ": " + value);
+              }
+            }
+          }
+
+          // const iteraterecursive = (array, cb, i = 0) => {
+          //   if (i >= array.lenght) return;
+          //   cb(array[i], i, array.length);
+          //   iteraterecursive(array, cb, i + 1);
+          // }
+          // iteraterecursive(arrx, (person, index, array) => {
+          //   console.log(person);
+          //   console.log(index);
+          //   //console.log(array === people)
+          // })
+          
+
+          // function iterateObject(obj) {
+          //   for (prop in obj) {
+          //     if (typeof (obj[prop]) == "object") {
+          //         console.log(obj[prop])
+          //       iterateObject(obj[prop]);
+          //     } else {
+          //       if (prop == "abl11" || prop == "alq11") {
+          //         // Do something with this data
+          //       }
+          //     }
+          //   }
+          // }
+          // iterateObject(arrx)
+          
+
+          // function myFunction(item, index) {
+          //   for (var key in item) {
+          //     console.log(item[key])
+          //   }
+          // }
+          //doc.docs.forEach(myFunction);
+          //arrx.forEach((user)=>console.log(user._id,user.abl11));
+          //debugger
+
+          // very important vue like render in f7
+          // self.$setState({
+          //vitems: doc.docs;
+          changeValue(doc);
+          console.log(doc);
+          // })
+        })
+        .catch(function (err) {
+          console.log(err)
+        });
+    };
+
+    $on('pageInit', () => {
+      // do something on page init
+    });
+    $on('pageAfterOut', () => {
+      // page has left the view
+    });
+    // component function must return render function
+    return $render;
+  }
+</script>
