@@ -54,7 +54,7 @@ var app = new Framework7({
 });
 
 var mainView = app.views.create('.view-main');
-// debugger
+debugger
 
 console.log('app initiated!')
 //var response;
