@@ -528,7 +528,7 @@
 
     const loadrecs = () => {
       var db = new PouchDB('alqs');
-      db.load('./dump.txt').then(function () {
+      db.load('./pages/dump.txt').then(function () {
         console.log('done loading!');
       }).catch(function (err) {
         // HTTP error or something like that

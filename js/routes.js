@@ -168,7 +168,7 @@ var routes = [
   },
   {
     path: '/about/',
-    componentUrl: './pages/about.html',
+    url: './pages/about.html',
   },
   {
     path: '/CRUDstatecollap/',
