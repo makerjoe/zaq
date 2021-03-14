@@ -35,158 +35,196 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css"> -->
 </head>
 
+
 <body>
+  <div id="app">
 
-  <div class="view view-main view-init safe-areas">
-    
-    <div class="page" data-name="main">
-      <div class="page-content">
-
+    <!-- Left panel with cover effect-->
+    <div id="panel-left-main" class="panel panel-left panel-cover theme-dark ">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Left MAIN Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              Left MAIN panel content goes here
+              <a href="/main/" class="link button">go main</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="page stacked" data-name="home">
-      <!-- Top Navbar -->
-      <div class="navbar">
-        <div class="navbar-bg"></div>
-        <div class="navbar-inner">
-          <div class="left">
-            <a href="#" class="link back">
-              <i class="icon icon-back"></i>
-              <span class="if-not-md">Back</span>
-            </a>
-
-            <a href="#" class="link icon-only panel-open" data-panel="left">
-              <i class="icon f7-icons ios-only">menu</i>
-              <i class="icon material-icons md-only">menu</i>
-            </a>
+    <!-- Right panel with reveal effect-->
+    <div id="panel-right-main" class="panel panel-right panel-reveal theme-dark">
+      <div class="view">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+              <div class="title">Right MAIN Panel</div>
+            </div>
           </div>
-          <div class="title sliding">R&D2 App</div>
-          <div class="right">
-            <a href="#" class="link icon-only panel-open" data-panel="right">
-              <i class="icon f7-icons ios-only">menu</i>
-              <i class="icon material-icons md-only">menu</i>
-            </a>
+          <div class="page-content">
+            <div class="block">
+              Right MAIN panel content goes here
+            </div>
           </div>
         </div>
       </div>
-      <!-- Toolbar-->
+    </div>
 
-      <!-- Scrollable page content-->
-      <div class="page-content">
-        <div class="block block-strong">
-          <p>Here is your blank Framework7 app. Let's see what we have here.</p>
-        </div>
+    <div class="view view-main view-init safe-areas">
 
-        <div class="block-title">Navigation</div>
 
-        <div class="list">
-          <ul>
-            <li>
-              <a href="/CRUDmdstate/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">CRUDmdstate</div>
-                </div>
+      <div class="page stacked" data-name="casa">
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-bg"></div>
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link back">
+                <i class="icon icon-back"></i>
+                <span class="if-not-md">Back</span>
               </a>
-            </li>
-            <li>
-              <a href="/dbadm/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">dbADM</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/formv2x/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">FormV2x</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/formv2/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">FormV2</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/about/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">Aboutx</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/setstate/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">setstate</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/form/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">Form</div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="/formhelpers/" class="item-content item-link">
-                <div class="item-inner">
-                  <div class="item-title">Helpers</div>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
 
-        <div class="block-title">Modals</div>
-        <div class="block block-strong">
-          <div class="row">
-            <div class="col-50">
-              <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
             </div>
-            <div class="col-50">
-              <a href="#" class="button button-raised button-fill login-screen-open"
-                data-login-screen=".login-screen">Login Screen</a>
+
+            <div class="title sliding">CASA App</div>
+
+            <div class="right">
+              <a href="#" class="link icon-only panel-open" data-panel="right">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
             </div>
           </div>
         </div>
+        <!-- Toolbar-->
 
-        <div class="block-title">Panels</div>
-        <div class="block block-strong">
-          <div class="row">
-            <div class="col-50">
-              <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
-            </div>
-            <div class="col-50">
-              <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+        <!-- Scrollable page content-->
+        <div class="page-content">
+          <div class="block block-strong">
+            <p>Here is your blank Framework7 app. Let's see what we have here.</p>
+          </div>
+
+          <div class="block-title">Navigation</div>
+
+          <div class="list">
+            <ul>
+              <li>
+                <a href="/CRUDmdstate/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">CRUDmdstate</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/dbadm/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">dbADM</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/formv2x/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">FormV2x</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/formv2/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">FormV2</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/about/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Aboutx</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/setstate/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">setstate</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/form/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Form</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/formhelpers/" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Helpers</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="block-title">Modals</div>
+          <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+              </div>
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill login-screen-open"
+                  data-login-screen=".login-screen">Login Screen</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
-        <div class="list links-list searchbar-hide-on-search">
-          <ul>
-            <li>
-              <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
-            </li>
-            <li>
-              <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
-            </li>
-            <li>
-              <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
-            </li>
-            <li>
-              <a href="/request-and-load/user/123456/">Request Data & Load</a>
-            </li>
-          </ul>
-          <div class="fontx">
-            <div>Hello</div>
-            <div>World!</div>
+          <div class="block-title">Panels</div>
+          <div class="block block-strong">
+            <div class="row">
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+              </div>
+              <div class="col-50">
+                <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+              </div>
+            </div>
           </div>
-          <pre>
+
+          <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
+          <div class="list links-list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
+              </li>
+              <li>
+                <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
+              </li>
+              <li>
+                <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
+              </li>
+              <li>
+                <a href="/request-and-load/user/123456/">Request Data & Load</a>
+              </li>
+            </ul>
+            <div class="fontx">
+              <div>Hello</div>
+              <div>World!</div>
+            </div>
+            <pre>
               <code>
                 <div class="fontx">
                 <div>Hello</div>
@@ -195,10 +233,40 @@
                 body { background-color: #eee; }
               </code>
           </pre>
+          </div>
         </div>
       </div>
-    </div>
 
+      <div class="page" data-name="main">
+        <div class="page-content">
+          <h1>MAIN PAGE</h1>
+
+          <a href="/casa/" class="link button">go casa</a>
+
+        </div>
+
+        <div class="navbar">
+          <div class="navbar-bg"></div>
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="#panel-left-main">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+            <div class="title sliding">MAIN App</div>
+            <div class="right">
+              <a href="#" class="link icon-only panel-open" data-panel="#panel-right-main">
+                <i class="icon f7-icons ios-only">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
   </div>
 
   <script src="//cdn.jsdelivr.net/npm/pouchdb@7.2.1/dist/pouchdb.min.js"></script>
@@ -261,10 +329,15 @@
     var $ = Dom7;
     //url: './index.html',
 
-    var routes = [
+    var routesx = [
       {
-        path: '/',
-        pageName: 'home', // change to ./index.html for main page
+        path: '/casa/',
+        pageName: 'casa', // change to ./index.html for main page
+      },
+
+      {
+        path: '/main/',
+        pageName: 'main', // change to ./index.html for main page
       },
 
       {
@@ -273,7 +346,7 @@
       }
     ];
 
-    var store = Framework7.createStore({
+    var storex = Framework7.createStore({
       state: {
         loading: false,
         users: [],
@@ -331,9 +404,9 @@
       theme: 'auto', // Automatic theme detection
       el: '#app', // App root element
       // App store
-      store: store,
+      store: storex,
       // App routes
-      routes: routes,
+      routes: routesx,
       // Register service worker
       serviceWorker: {
         path: 'service-worker.js',
@@ -355,7 +428,7 @@
     }, 3000);
 
     // redirect directly to home page
-    app.views.main.router.navigate('/home/')
+    //app.views.main.router.navigate('/home/')
 
     // Login Screen Demo
     $('#my-login-screen .login-button').on('click', function () {
