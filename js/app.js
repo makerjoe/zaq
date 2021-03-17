@@ -20,7 +20,6 @@ Framework7.registerComponent(
   <div data-page="externalsite" class="page">
     <div class="page-content" style="height: auto">
         <div style="height:100%">
-        <a><iframe src="http://google.de" style="height:100%;width:100%"></iframe></a>
         </div>
     </div>
   </div>
